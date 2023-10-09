@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function SubMenuItem({ section }) {
+  const navigate = useNavigate();
   return (
     <>
       <div className="group relative inline-block">
@@ -23,7 +26,10 @@ export default function SubMenuItem({ section }) {
                 key={screen.ScreenId}
                 className="rounded-sm px-3 py-1 hover:bg-gray-100 hover:font-semibold"
               >
-                <button className="text-left w-max min-w-[103px]">
+                <button
+                  className="text-left w-max min-w-[103px]"
+                  onClick={() => navigate(screen.Url)}
+                >
                   {screen.ScreenName}
                 </button>
               </li>
